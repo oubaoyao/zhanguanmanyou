@@ -17,3 +17,21 @@ namespace MTFrame.MTEvent
         Message,
     }
 }
+
+public enum EventType
+{
+    RayEventName,
+    CollideEventName,
+}
+
+public enum RayEventName
+{
+    aaa,
+    bbb,
+}
+
+public enum CollideEventName
+{
+    ccc,
+    ddd,
+}
