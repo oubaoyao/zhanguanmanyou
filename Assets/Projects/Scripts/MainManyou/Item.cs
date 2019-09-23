@@ -2,17 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public abstract class Item : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool IsTrigger = false;
+    public virtual void EnterTrigger()
     {
+
+    }
+
+    public virtual void LeaveTrigger()
+    {
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(IsTrigger)
+        {
+            if (other)
+                EnterTrigger();
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(IsTrigger)
+        {
+            LeaveTrigger();
+        }
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

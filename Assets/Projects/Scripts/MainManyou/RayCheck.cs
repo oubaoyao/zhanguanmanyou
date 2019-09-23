@@ -27,7 +27,11 @@ public class RayCheck : MonoBehaviour
         if(Physics.Raycast(tr.position, tr.forward, out hitInfo, maxDistance))
         {
             string tag = hitInfo.transform.gameObject.tag;
-            if(tag == "aaa" ||tag == "bbb")
+            if(hitInfo.transform.gameObject.GetComponent<Item>())
+            {
+                
+            }
+            else if(tag == "aaa" ||tag == "bbb")
             {
                 ManyouState.SentRayEvent((RayEventName)Enum.Parse(typeof(RayEventName), tag));
             }

@@ -59,6 +59,8 @@ public class ManyouState : BaseState
     public override void Enter()
     {
         base.Enter();
+        //CurrentTask.ChangeTask(new Scenes01Task(this));
+        SceneManager.LoadSceneAsync("Scene01", MTFrame.MTScene.LoadingModeType.UnityLocal,()=> { UIManager.GetPanel<LoadingPanel>(WindowTypeEnum.Screen).LoadingStart(); },null,()=> { UIManager.GetPanel<LoadingPanel>(WindowTypeEnum.Screen).LoadingComplete(); });
     }
 
     public static void SentCollideEvent(CollideEventName st)

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Main : MonoBehaviour
 {
     public static Main Instance;
+    public Camera MainCamera;
 #if UNITY_STANDALONE_WIN
     /// <summary>
     /// 屏幕分辨率
