@@ -533,7 +533,7 @@ Transform:
   m_GameObject: {fileID: 1370164272030106}
   m_LocalRotation: {x: 0, y: 0.54566324, z: 0, w: 0.8380046}
   m_LocalPosition: {x: 0, y: 1.079, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
   m_Children:
   - {fileID: 4011429072369914}
   - {fileID: 224093912015688082}
@@ -811,6 +811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4011429072369914}
   - component: {fileID: 143643410546674762}
+  - component: {fileID: 616641218}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -851,6 +852,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &616641218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783873194131740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4a12fdf3b8a3c24da2fa9d0bb3dcdbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 50
+  Maincamera: {fileID: 20209911416926764}
 --- !u!1 &1807901658246854
 GameObject:
   m_ObjectHideFlags: 0

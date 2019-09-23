@@ -9,6 +9,7 @@ public class LoadingPanel : BasePanel
 {
     public Slider Loadingslider;
     public Text text;
+    public static string SceneName = "Scene01";
 
     public override void InitFind()
     {
@@ -20,34 +21,53 @@ public class LoadingPanel : BasePanel
     public override void Open()
     {
         base.Open();
-        Main.Instance.MainCamera.transform.gameObject.SetActive(true);
-        LoadingStart();
-        EventManager.RemoveUpdateListener(MTFrame.MTEvent.UpdateEventEnumType.Update, "OnUpdate", OnUpdate);
-        EventManager.AddUpdateListener(MTFrame.MTEvent.UpdateEventEnumType.Update, "OnUpdate", OnUpdate);
-    }
-
-    private void OnUpdate(float timeProcess)
-    {
-        text.text = (Loadingslider.value * 100).ToString() + "%";
+        Reset();
+        SceneManager.LoadSceneAsync(SceneName, MTFrame.MTScene.LoadingModeType.UnityLocal, 
+            () => { LoadingStart(); }, null, () => { if (Loadingslider.value > 0.33f) { LoadingComplete(); } else { Invoke("LoadingComplete", 1.0f); }  });
     }
 
     public override void Hide()
     {
-        base.Hide();
-        EventManager.RemoveUpdateListener(MTFrame.MTEvent.UpdateEventEnumType.Update, "OnUpdate", OnUpdate);
+        base.Hide();     
         Main.Instance.MainCamera.transform.gameObject.SetActive(false);
+        Main.Instance.shuangyaogan.SetActive(true);
     }
 
     public void LoadingStart()
     {
         Loadingslider.value = 0;
         text.text = "";
-        DG.Tweening.DOTween.To(() => Loadingslider.value, x => Loadingslider.value = x, 0.99f, 12);
+        StartCoroutine("LoadingSlide");  
     }
 
     public void LoadingComplete()
     {
+        StopCoroutine("LoadingSlide");
         text.text = "100%";
         Loadingslider.value = 1;
+        TimeTool.Instance.AddDelayed(TimeDownType.NoUnityTimeLineImpact, 2.0f, Hide);
+        Debug.Log("读条完成！");
+    }
+
+    IEnumerator LoadingSlide()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.01f);
+            Loadingslider.value += 0.01f;
+            text.text = ((int)(Loadingslider.value * 100)).ToString() + "%";
+            if (Loadingslider.value == 0.99f)
+            {
+                yield break;
+            }
+        }
+    }
+
+    private void Reset()
+    {
+        Main.Instance.MainCamera.transform.gameObject.SetActive(true);
+        Main.Instance.shuangyaogan.SetActive(false);
+        text.text = "";
+        Loadingslider.value = 0;
     }
 }
