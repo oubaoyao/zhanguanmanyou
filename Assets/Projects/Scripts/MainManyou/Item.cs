@@ -34,4 +34,17 @@ public abstract class Item : MonoBehaviour
         
     }
 
+
+
+    private void OnBecameVisible()
+    {
+        EnterTrigger();
+        Debug.Log("进来");
+    }
+
+    private void OnBecameInvisible()
+    {
+        Debug.Log("离开");
+        LeaveTrigger();
+    }
 }

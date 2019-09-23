@@ -75,9 +75,9 @@ namespace MTFrame.MTScene
             {
                 updateLoading?.Invoke(asyncOperation.progress);
 
-                MTEvent.EventParamete eventParamete = new MTEvent.EventParamete();
-                eventParamete.AddParameter(asyncOperation.progress);
-                EventManager.TriggerEvent(MTEvent.GenericEventEnumType.Message, LoadingMessageType.LoadingProcess.ToString(), eventParamete);
+                //MTEvent.EventParamete eventParamete = new MTEvent.EventParamete();
+                //eventParamete.AddParameter(asyncOperation.progress);
+                //EventManager.TriggerEvent(MTEvent.GenericEventEnumType.Message, LoadingMessageType.LoadingProcess.ToString(), eventParamete);
 
                 yield return new WaitForFixedUpdate();
             }
@@ -92,9 +92,9 @@ namespace MTFrame.MTScene
 
             endLoading?.Invoke();
 
-            MTEvent.EventParamete eventParamete = new MTEvent.EventParamete();
-            eventParamete.AddParameter(obj.progress);
-            EventManager.TriggerEvent(MTEvent.GenericEventEnumType.Message, LoadingMessageType.LoadingProcess.ToString(), eventParamete);
+            //MTEvent.EventParamete eventParamete = new MTEvent.EventParamete();
+            //eventParamete.AddParameter(obj.progress);
+            //EventManager.TriggerEvent(MTEvent.GenericEventEnumType.Message, LoadingMessageType.LoadingProcess.ToString(), eventParamete);
 
         }
 

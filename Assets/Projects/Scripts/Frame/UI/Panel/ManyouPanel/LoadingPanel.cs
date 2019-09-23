@@ -31,6 +31,7 @@ public class LoadingPanel : BasePanel
         base.Hide();     
         Main.Instance.MainCamera.transform.gameObject.SetActive(false);
         Main.Instance.shuangyaogan.SetActive(true);
+        UIManager.ChangePanelState<Scenes01Panel>(WindowTypeEnum.ForegroundScreen, UIPanelStateEnum.Open);
     }
 
     public void LoadingStart()

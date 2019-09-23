@@ -29,4 +29,16 @@ public class Itemtest1 : Item
         base.LeaveTrigger();
         Scenes01Panel.Hidedropdown();
     }
+
+    //private void OnBecameVisible()
+    //{
+    //    EnterTrigger();
+    //    Debug.Log("进来");
+    //}
+
+    //private void OnBecameInvisible()
+    //{
+    //    Debug.Log("离开");
+    //    LeaveTrigger();
+    //}
 }
