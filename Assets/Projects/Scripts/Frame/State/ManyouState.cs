@@ -13,8 +13,8 @@ public class ManyouState : BaseState
             return new string[]
             {
                 //事件名string类型
-                EventType.CollideEventName.ToString(),
-                EventType.RayEventName.ToString(),
+                MTFrame.MTEvent.EventType.CollideEventName.ToString(),
+                MTFrame.MTEvent.EventType.RayEventName.ToString(),
             };
         }
         set { }
@@ -24,7 +24,7 @@ public class ManyouState : BaseState
     {
         string eventname = parameteData.EvendName;
         
-        if (eventname == EventType.CollideEventName.ToString())
+        if (eventname == MTFrame.MTEvent.EventType.CollideEventName.ToString())
         {
             CollideEventName data = parameteData.GetParameter<CollideEventName>()[0];
             switch (data)
@@ -39,7 +39,7 @@ public class ManyouState : BaseState
                     break;
             }
         }
-        else if(eventname == EventType.RayEventName.ToString())
+        else if(eventname == MTFrame.MTEvent.EventType.RayEventName.ToString())
         {
             RayEventName data = parameteData.GetParameter<RayEventName>()[0];
             switch(data)
@@ -67,13 +67,13 @@ public class ManyouState : BaseState
     {
         EventParamete eventParamete = new EventParamete();
         eventParamete.AddParameter(st);
-        EventManager.TriggerEvent(GenericEventEnumType.Message, EventType.CollideEventName.ToString(), eventParamete);
+        EventManager.TriggerEvent(GenericEventEnumType.Message, MTFrame.MTEvent.EventType.CollideEventName.ToString(), eventParamete);
     }
 
     public static void SentRayEvent(RayEventName st)
     {
         EventParamete eventParamete = new EventParamete();
         eventParamete.AddParameter(st);
-        EventManager.TriggerEvent(GenericEventEnumType.Message, EventType.RayEventName.ToString(), eventParamete);
+        EventManager.TriggerEvent(GenericEventEnumType.Message, MTFrame.MTEvent.EventType.RayEventName.ToString(), eventParamete);
     }
 }
