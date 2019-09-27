@@ -7,7 +7,6 @@ public class Main : MonoBehaviour
 {
     public static Main Instance;
     public Camera MainCamera;
-    public GameObject shuangyaogan;
 
 #if UNITY_STANDALONE_WIN
     /// <summary>

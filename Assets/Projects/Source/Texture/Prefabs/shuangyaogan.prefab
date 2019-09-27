@@ -517,6 +517,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4702461713870768}
+  - component: {fileID: 7643654587060313868}
   m_Layer: 0
   m_Name: shuangyaogan
   m_TagString: Untagged
@@ -531,8 +532,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370164272030106}
-  m_LocalRotation: {x: 0, y: 0.54566324, z: 0, w: 0.8380046}
-  m_LocalPosition: {x: 0, y: 1.079, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
   m_Children:
   - {fileID: 4011429072369914}
@@ -540,7 +541,26 @@ Transform:
   - {fileID: 4084366583101530}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 66.14, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7643654587060313868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370164272030106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bd96879bc6af784a82e435ff40efcf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Minimap_map: {fileID: 0}
+  Minimap_target: {fileID: 0}
+  Target: {fileID: 4011429072369914}
+  Scene_height: 0
+  Scene_width: 0
+  ETCleft: {fileID: 114533012666362622}
+  ETCright: {fileID: 114027254309633920}
 --- !u!1 &1728347082017440
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,7 +847,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783873194131740}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.079, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4814127390437542}

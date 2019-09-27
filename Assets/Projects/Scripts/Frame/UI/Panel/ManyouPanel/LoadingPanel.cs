@@ -11,6 +11,12 @@ public class LoadingPanel : BasePanel
     public Text text;
     public static string SceneName = "Scene01";
 
+    protected override void Awake()
+    {
+        base.Awake();
+        transform.SetAsLastSibling();
+    }
+
     public override void InitFind()
     {
         base.InitFind();
@@ -30,8 +36,8 @@ public class LoadingPanel : BasePanel
     {
         base.Hide();     
         Main.Instance.MainCamera.transform.gameObject.SetActive(false);
-        Main.Instance.shuangyaogan.SetActive(true);
         UIManager.ChangePanelState<Scenes01Panel>(WindowTypeEnum.ForegroundScreen, UIPanelStateEnum.Open);
+
     }
 
     public void LoadingStart()
@@ -67,7 +73,6 @@ public class LoadingPanel : BasePanel
     private void Reset()
     {
         Main.Instance.MainCamera.transform.gameObject.SetActive(true);
-        Main.Instance.shuangyaogan.SetActive(false);
         text.text = "";
         Loadingslider.value = 0;
     }
